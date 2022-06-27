@@ -1,4 +1,4 @@
-alias  gl='cd /mnt/c/Users/user/Documents/アプリケーション/Python'
+alias  gp='cd /mnt/c/Users/user/Documents/python作業台'
 #カレントディレクトリの設定
 source ~/.zplug/init.zsh
 
