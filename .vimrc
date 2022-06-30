@@ -1,4 +1,4 @@
-se encoding=utf-8
+set encoding=utf-8
 scriptencoding utf-8
 set number
 set title
@@ -9,31 +9,31 @@ Plug 'vim-denops/denops.vim'
 Plug 'prabirshrestha/vim-lsp'
 Plug 'mattn/vim-lsp-settings'
 " Install your sources
-Plug 'Shougo/ddc-around'
+Plug 'Shougo/ddc-around'  " around source
 
 " Install your filters
-Plug 'Shougo/ddc-matcher_head'
+Plug 'Shougo/ddc-matcher_head'  "  matcher_head filter
 Plug 'Shougo/ddc-sorter_rank'
-Plug 'shun/ddc-vim-lsp'
+Plug 'shun/ddc-vim-lsp' 
 call plug#end()
 " Customize global settings
 " Use around source.
 " https://github.com/Shougo/ddc-around
-call ddc#custom#patch_global('sources', ['around'])
 
-" Use matcher_head and sorter_rank.
-" https://github.com/Shougo/ddc-matcher_head
-" https://github.com/Shougo/ddc-sorter_rank
+" sourceの設定
+call ddc#custom#patch_global('sources', ['vim-lsp'])
+
+" sourceOptionsにmatchersを設定してる
 call ddc#custom#patch_global('sourceOptions', {
       \ '_': {
       \   'matchers': ['matcher_head'],
       \   'sorters': ['sorter_rank']},
       \ })
 
-" Change source options
-call ddc#custom#patch_global('sourceOptions', {
-      \ 'around': {'mark': 'A'},
-      \ })
+
+
+
+
 call ddc#custom#patch_global('sourceParams', {
       \ 'around': {'maxSize': 500},
       \ })
@@ -61,3 +61,15 @@ inoremap <expr><S-TAB>  ddc#map#pum_visible() ? '<C-p>' : '<C-h>'
 " Use ddc.
 call ddc#enable()
 
+" lspの設定
+let g:lsp_diagnostics_echo_cursor = 1
+" flake8の規定値をpycodestyleとpyflakeで使ってるよ
+let g:lsp_settings = {
+\   'pyls-all': {
+\     'workspace_config': {
+\       'pyls': {
+\         'configurationSources': ['flake8']
+\       }
+\     }
+\   },
+\}
