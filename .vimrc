@@ -6,14 +6,15 @@ call plug#begin()
 
 Plug 'Shougo/ddc.vim'
 Plug 'vim-denops/denops.vim'
-
+Plug 'prabirshrestha/vim-lsp'
+Plug 'mattn/vim-lsp-settings'
 " Install your sources
 Plug 'Shougo/ddc-around'
 
 " Install your filters
 Plug 'Shougo/ddc-matcher_head'
 Plug 'Shougo/ddc-sorter_rank'
-
+Plug 'shun/ddc-vim-lsp'
 call plug#end()
 " Customize global settings
 " Use around source.
