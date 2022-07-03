@@ -36,14 +36,14 @@ call ddc#custom#patch_global('sourceOptions', {
       \ 'vim_lsp': {
       \   'matchers': ['matcher_head','matcher_fuzzy'],
       \   'sorters': ['sorter_rank'],
-      \   'mark': ["lsp"]},
+      \   'mark': 'lsp'},
       \ })
 " source aroundの設定してる
 call ddc#custom#patch_global('sourceOptions', {
       \ 'around': {
       \   'matchers': ['matcher_head','matcher_fuzzy'],
       \   'sorters': ['sorter_rank'],
-      \   'mark': ["around"]},
+      \   'mark': 'around'},
       \ })
 
 
