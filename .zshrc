@@ -1,5 +1,5 @@
 source $HOME/.zplug/init.zsh
-source /usr/local/src/enhancd/init.sh
+source $HOME/enhancd/init.sh
 # プロンプトの設定
 PROMPT="%F{240}[%d]%f"$'\n'
 
